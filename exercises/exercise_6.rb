@@ -9,3 +9,19 @@ puts "Exercise 6"
 puts "----------"
 
 # Your code goes here ...
+
+class Store
+  has_many :employees
+end
+
+class Employee
+  belongs_to :store
+end
+
+@store1 = Store.find_by(id: 1)
+@store2 = Store.find_by(id: 2)
+
+@store1.employees.create(first_name: 'Aaron', last_name: 'Tagadtad', hourly_rate: 70)
+@store1.employees.create(first_name: 'John', last_name: 'Aaron', hourly_rate: 60)
+@store1.employees.create(first_name: 'Gimli', last_name: 'Jones', hourly_rate: 50)
+@store1.employees.create(first_name: 'Aragorn', last_name: 'Jr.', hourly_rate: 40)
